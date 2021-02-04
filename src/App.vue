@@ -3,7 +3,12 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/register">Register</router-link>
+      <router-link to="/customer">Customer</router-link> |
+      <router-link to="/account">Account</router-link> |
+      <router-link to="/balance">Balance</router-link> |
+      <router-link to="/deposit">Deposit</router-link> |
+      <router-link to="/withdrawal">Withdrawal</router-link> |
+      <router-link to="/customer">Transfer</router-link> |
     </div>
     <router-view/>
   </div>

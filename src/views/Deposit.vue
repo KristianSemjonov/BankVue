@@ -1,22 +1,11 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    Account: <input v-model="accountBalance" placeholder="number">
+    <br>
+    Deposit amount: <input v-model="accountBalance" placeholder="number">
     <button v-on:click="getData()">Submit</button>
-    <table border="1">
-      <tr>
-        <th>id</th>
-        <th>customer_id</th>
-        <th>account_nr</th>
-        <th>balance</th>
-      </tr>
-      <tr v-for="row in account">
-        <td>{{row.id}}</td>
-        <td>{{row.customer_id}}</td>
-        <td>{{row.account_nr}}</td>
-        <td>{{row.balance}}</td>
-      </tr>
-    </table>
+    <br>
+    Balance is updated by:
   </div>
 </template>
 
@@ -33,7 +22,7 @@ let saveInJs = function () {
 }
 
 export default {
-  name: 'Register',
+  name: 'Deposit',
   components: {},
   data: function () {
     return {
