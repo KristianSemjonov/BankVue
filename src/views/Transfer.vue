@@ -2,24 +2,34 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <h1>Transfer money between accounts</h1>
-    From: <input v-model="accountBalance" placeholder="number">
-    To: <input v-model="accountBalance" placeholder="number">
-    <button v-on:click="getData()">Submit</button>
+    From: <input v-model="account.from" placeholder="account">
+    To: <input v-model="account.to" placeholder="account">
+    Amount: <input v-model="account.amount" placeholder="number">
+    <button v-on:click="saveInHtml()">Submit</button>
     <br>
   </div>
 </template>
 
 <script>
-let getData = function(){
-  this.$http.get('http://localhost:8081/bank2/accountBalance?accountNr=' + this.accountBalance)
-  .then(response => this.accountBalance = response.data)
-  .catch(response => console.log(response))
-}
+// let getData = function(){
+//   this.$http.get('http://localhost:8081/bank2/accountBalance?accountNr=' + this.accountBalance)
+//   .then(response => this.accountBalance = response.data)
+//   .catch(response => console.log(response))
+// }
 // @ is an alias to /src
-let saveInJs = function () {
-  this.$http.get('http://localhost:8081/bank2/accountBalance?accountNr=', this.accountBalance);
-  alert('Info is saved');
-}
+//http://localhost:8081/bank2/transferMoney?fromAccount=EE123&toAccount=EE124&amount=12
+    let saveInJs = function () {
+      this.$http.get('http://localhost:8081/bank2/transferMoney',
+          {
+            params: {
+              fromAccount: this.account.from,
+              toAccount: this.account.to,
+              amount: this.account.amount
+            }
+
+          })
+      alert('Transaction is processed');
+    }
 
 export default {
   name: 'Transfer',
@@ -33,9 +43,9 @@ export default {
   methods:
       {
         saveInHtml: saveInJs,
-        getData: getData
+        // getData: getData
       },
-  mounted (){
+  mounted() {
 
   }
 }

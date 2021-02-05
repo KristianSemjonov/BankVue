@@ -7,6 +7,7 @@ import Customer from '../views/Customer.vue'
 import Deposit from '../views/Deposit.vue'
 import Withdrawal from '../views/Withdrawal.vue'
 import Transfer from '../views/Transfer.vue'
+import Login from '../views/Login.vue'
 
 Vue.use(VueRouter)
 
@@ -55,7 +56,12 @@ const routes = [
     path: '/transfer',
     name: 'Transfer',
     component: Transfer
-  }
+  },
+    {
+        path: '/login',
+        name: 'Login',
+        component: Login
+    }
 ]
 
 const router = new VueRouter({

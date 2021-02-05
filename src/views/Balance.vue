@@ -25,7 +25,7 @@ let getData = function(){
 export default {
   name: 'Balance',
   components: {},
-  data: function () { //muutujad
+  data: function () {
     return {
       accountNumber: '',
       accountBalance: '',

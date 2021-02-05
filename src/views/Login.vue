@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <h1>Create new account</h1>
-    Account: <input v-model="customer.account" placeholder="number">
-    ID: <input v-model="customer.id" placeholder="ID">
+    <h1>Login</h1>
+    Username: <input v-model="username" placeholder="">
+    Password: <input v-model="password" placeholder="">
     <button v-on:click="saveInHtml()">Submit</button>
   </div>
 </template>
@@ -42,7 +42,7 @@ export default {
   methods:
       {
         saveInHtml: saveInJs,
-        // getData: getData
+        getData: getData
       },
   mounted() {
 
